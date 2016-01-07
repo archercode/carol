@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.CompoundButton;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -215,7 +215,7 @@ public class InternetFragment extends Fragment implements AbsListView.OnItemClic
             View view = inflater.inflate(R.layout.fragment_item_net, null);
 
 
-            Switch switchPower = (Switch) view.findViewById(R.id.switch_power);
+          /*  Switch switchPower = (Switch) view.findViewById(R.id.switch_power);
             switchPower.setChecked(items.get(position).getOn());
 
             switchPower.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -236,9 +236,33 @@ public class InternetFragment extends Fragment implements AbsListView.OnItemClic
                 }
 
 
+            });*/
+
+
+            Button btnOn = (Button) view.findViewById(R.id.btn_on);
+            Button btnOff = (Button) view.findViewById(R.id.btn_off);
+
+            btnOn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    HashMap<String,String> params = new HashMap<String, String>();
+                    params.put("args", "on"+(position+1));
+                    new RestAsyncTask(params).execute();
+                }
             });
 
+            btnOff.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    HashMap<String,String> params = new HashMap<String, String>();
+                    params.put("args", "off"+(position+1));
+                    new RestAsyncTask(params).execute();
+                }
+            });
 
+            ImageView imageConnected = (ImageView) view.findViewById(R.id.iv_connected);
+            imageConnected.setImageResource((items.get(position).getOn()?
+              R.drawable.green_circle:R.drawable.red_circle));
 
             TextView tvName = (TextView) view.findViewById(R.id.tv_name);
             tvName.setText(items.get(position).getName());

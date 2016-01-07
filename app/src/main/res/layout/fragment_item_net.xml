@@ -10,13 +10,44 @@
         android:id="@+id/switch_power"
         android:checked="false"
         android:layout_gravity="center_vertical"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_connected"
+        android:src="@drawable/red_circle"
+        android:layout_gravity="center_vertical"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Sample Item"
         android:id="@+id/tv_name"
         android:layout_gravity="center_vertical"
-        android:paddingLeft="15dp" />
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_weight="1.40"/>
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+                  android:orientation="horizontal" android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:gravity="end"
+                  android:layout_weight="1">
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="ON"
+            android:id="@+id/btn_on"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="OFF"
+            android:id="@+id/btn_off"/>
+    </LinearLayout>
 </LinearLayout>
