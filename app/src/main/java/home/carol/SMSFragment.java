@@ -88,6 +88,7 @@ public class SMSFragment extends Fragment implements AbsListView.OnItemClickList
         items.add(new Item("ENGINE STOP",false,""));
         items.add(new Item("ALL OFF",false,""));
         items.add(new Item("LOCK DOORS",false,""));
+        items.add(new Item("OPEN DOORS",false,""));
         items.add(new Item("CAR STATUS",false,""));
 
 

@@ -262,7 +262,7 @@ public class InternetFragment extends Fragment implements AbsListView.OnItemClic
 
             ImageView imageConnected = (ImageView) view.findViewById(R.id.iv_connected);
             imageConnected.setImageResource((items.get(position).getOn()?
-              R.drawable.green_circle:R.drawable.red_circle));
+              R.drawable.green_circle:R.drawable.grey_circle));
 
             TextView tvName = (TextView) view.findViewById(R.id.tv_name);
             tvName.setText(items.get(position).getName());

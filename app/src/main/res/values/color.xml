@@ -59,4 +59,9 @@
     <color name="text_secondary">#727272</color>
     <color name="text_icons">#FFFFFF</color>
 
+
+    <color name="grey">#3d3d3d</color>
+
+    <color name="darkgrey">#2e2e2e</color>
+
 </resources>
